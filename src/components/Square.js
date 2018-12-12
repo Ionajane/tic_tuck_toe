@@ -6,16 +6,20 @@ const Square = (props) => {
     props.handleSquareClick(props.value);
   }
 
-  if (props.selection === "") {
-  return(
+  if (props.selection === null) {
+    return(
       <img onClick={handleClick} src={require("../images/RuPaulSilhouette.png")} height="200px;"/>
-      // <h3 onClick={handleClick}>EMPTY</h3>
-  )};
+    )};
 
-  return(
+  if (props.selection === 1) {
+    return(
       <img onClick={handleClick} src={require("../images/RuPaul_vector.gif")} height="200px;"/>
-      // <h3 onClick={handleClick}>QUEEN</h3>
-  )
+    )}
+
+  if (props.selection === 2) {
+    return(
+      <img onClick={handleClick} src={require("../images/sissy_spastik_dribbble.png")} height="200px;"/>
+    )}
 }
 
 export default Square;

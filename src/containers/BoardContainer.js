@@ -25,22 +25,25 @@ class BoardContainer extends Component {
   handleSquareClick(index) {
     const newState = this.state;
     this.changeSquareValue(newState.squares[index]);
-    this.changeCurrentPlayer(newState.currentPlayer)
+    newState.currentPlayer = this.getNextPlayerNumber(newState)
+    console.log("this is the new state:", newState);
     this.setState(newState);
   }
 
   changeSquareValue(square) {
+    console.log("changeSquareValue triggered for this square");
     if (square.selection === null) {
       square.selection = this.state.currentPlayer;
     }
   }
 
-  changeCurrentPlayer(currentPlayer) {
-    if (currentPlayer === 1) {
-      currentPlayer = 2
+  getNextPlayerNumber(currentState) {
+    console.log("changeCurrentPlayer triggered");
+    if (currentState.currentPlayer === 1) {
+      return 2
     }
-    if (currentPlayer === 2) {
-      currentPlayer = 1
+    if (currentState.currentPlayer === 2) {
+      return 1
     }
   }
 
