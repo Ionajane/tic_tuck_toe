@@ -47,7 +47,7 @@ class BoardContainer extends Component {
   render() {
     return(
       <>
-        <h1>Ru Paul</h1>
+        <h1>TICK - TUCK - TOE</h1>
         <SquareGrid data={this.state.squares} handleSquareClick={this.handleSquareClick}/>
       </>
     )
