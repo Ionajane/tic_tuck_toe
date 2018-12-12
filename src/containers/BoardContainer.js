@@ -7,7 +7,7 @@ class BoardContainer extends Component {
     super();
     this.state = {
       squares: [
-        {value: "x"},
+        {value: ""},
         {value: ""},
         {value: ""},
         {value: ""},
