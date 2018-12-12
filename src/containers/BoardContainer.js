@@ -7,29 +7,40 @@ class BoardContainer extends Component {
     super();
     this.state = {
       squares: [
-        {selection: "x"},
-        {selection: ""},
-        {selection: ""},
-        {selection: ""},
-        {selection: ""},
-        {selection: ""},
-        {selection: ""},
-        {selection: ""},
-        {selection: ""}
-      ]
+        {selection: null},
+        {selection: null},
+        {selection: null},
+        {selection: null},
+        {selection: null},
+        {selection: null},
+        {selection: null},
+        {selection: null},
+        {selection: null}
+      ],
+      currentPlayer: 1
     }
     this.handleSquareClick = this.handleSquareClick.bind(this);
   }
 
   handleSquareClick(index) {
-    const newSquares = this.state.squares;
-    this.changeSquareValue(newSquares[index]);
-    this.setState({squares: newSquares});
+    const newState = this.state;
+    this.changeSquareValue(newState.squares[index]);
+    this.changeCurrentPlayer(newState.currentPlayer)
+    this.setState(newState);
   }
 
   changeSquareValue(square) {
-    if (square.selection === "") {
-      return square.selection = "x";
+    if (square.selection === null) {
+      square.selection = this.state.currentPlayer;
+    }
+  }
+
+  changeCurrentPlayer(currentPlayer) {
+    if (currentPlayer === 1) {
+      currentPlayer = 2
+    }
+    if (currentPlayer === 2) {
+      currentPlayer = 1
     }
   }
 
