@@ -7,6 +7,7 @@ const SquareGrid = (props) => {
     return <Square
     value={square.value}
     key={square.index}
+    handleSquareClick={square.handleSquareClick}
     />
   })
 

@@ -7,7 +7,7 @@ class BoardContainer extends Component {
     super();
     this.state = {
       squares: [
-        {value: ""},
+        {value: "x"},
         {value: ""},
         {value: ""},
         {value: ""},
@@ -17,6 +17,19 @@ class BoardContainer extends Component {
         {value: ""},
         {value: ""}
       ]
+    }
+    // this.handleSquareClick = this.handleSquareClick.bind(this);
+  }
+
+  handleSquareClick(index) {
+    const newSquares = this.state.squares;
+    this.changeSquareValue(newSquares[index]);
+    this.setState({squares: newSquares});
+  }
+
+  changeSquareValue(square) {
+    if (square.value == "") {
+      return square.value = "x";
     }
   }
 
