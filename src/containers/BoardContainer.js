@@ -51,7 +51,6 @@ class BoardContainer extends Component {
     return(
       <div className="board-container">
         <h1>TICK - TUCK - TOE</h1>
-        <h2>extravaganza!</h2>
         <SquareGrid data={this.state.squares} handleSquareClick={this.handleSquareClick}/>
       </div>
     )
