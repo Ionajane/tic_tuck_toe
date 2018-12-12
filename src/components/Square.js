@@ -9,7 +9,7 @@ const Square = (props) => {
   if (props.selection === null) {
     return(
       <div className= "square">
-      <img onClick={handleClick} src={require("../images/RuPaulSilhouette.png")} height="200px;"/>
+      <img onClick={handleClick} src={require("../images/SilhouetteWhite.png")} height="200px;"/>
       </div>
     )};
 
