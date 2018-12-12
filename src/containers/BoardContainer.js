@@ -7,18 +7,18 @@ class BoardContainer extends Component {
     super();
     this.state = {
       squares: [
-        {value: ""},
-        {value: ""},
-        {value: ""},
-        {value: ""},
-        {value: ""},
-        {value: ""},
-        {value: ""},
-        {value: ""},
-        {value: ""}
+        {selection: "x"},
+        {selection: ""},
+        {selection: ""},
+        {selection: ""},
+        {selection: ""},
+        {selection: ""},
+        {selection: ""},
+        {selection: ""},
+        {selection: ""}
       ]
     }
-    // this.handleSquareClick = this.handleSquareClick.bind(this);
+    this.handleSquareClick = this.handleSquareClick.bind(this);
   }
 
   handleSquareClick(index) {
@@ -28,8 +28,8 @@ class BoardContainer extends Component {
   }
 
   changeSquareValue(square) {
-    if (square.value == "") {
-      return square.value = "x";
+    if (square.selection === "") {
+      return square.selection = "x";
     }
   }
 
@@ -37,7 +37,7 @@ class BoardContainer extends Component {
     return(
       <>
         <h1>Ru Paul</h1>
-        <SquareGrid data={this.state.squares}/>
+        <SquareGrid data={this.state.squares} handleSquareClick={this.handleSquareClick}/>
       </>
     )
   }

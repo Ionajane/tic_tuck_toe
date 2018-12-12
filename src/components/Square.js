@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Square = (props) => {
-  if (props.value == "") {
+
+  function handleClick(event) {
+    props.handleSquareClick(props.value);
+  }
+
+  if (props.selection === "") {
   return(
-    <p>SQUIRLS</p>
+      <img onClick={handleClick} src={require("../images/wig.png")}/>
+      // <h3 onClick={handleClick}>EMPTY</h3>
   )};
 
-// function handleClick(event) {
-//   console.log("square click event:",event.target.value);
-//   props.handleSquareClick(event.target.value);
-// }
-
   return(
-    <>
-      <a><p>Queens</p></a>
-    </>
+      <img onClick={handleClick} src={require("../images/RuPaul_vector.gif")}/>
+      // <h3 onClick={handleClick}>QUEEN</h3>
   )
 }
 

@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Square from './Square.js';
 
 const SquareGrid = (props) => {
-  console.log("SquareGrid props:", props);
+
   const squares = props.data.map((square, index) => {
     return <Square
-    value={square.value}
-    key={square.index}
-    handleSquareClick={square.handleSquareClick}
+    value={index}
+    key={index}
+    selection={square.selection}
+    handleSquareClick={props.handleSquareClick.bind(this)}
     />
   })
 
