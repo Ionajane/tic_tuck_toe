@@ -8,7 +8,7 @@ const Square = (props) => {
 
   if (props.selection === "") {
   return(
-      <img onClick={handleClick} src={require("../images/wig.png")} height="200px;"/>
+      <img onClick={handleClick} src={require("../images/RuPaulSilhouette.png")} height="200px;"/>
       // <h3 onClick={handleClick}>EMPTY</h3>
   )};
 
